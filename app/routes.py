@@ -1,4 +1,4 @@
-from flask import Flask         #from the flask module import the flask class
+from flask import Flask, jsonify         #from the flask module import the flask class
 app = Flask(__name__)           #create an instance of the flask class into the app variable (now an object) - "class is to object, like blueprint is to house"
 
 
@@ -11,4 +11,4 @@ def index():    #flask calls these "view functions". A wrapped function is refer
         "is_active": True
     }
 
-    return me   #when a view function returns a dict. Flask automatically converts it to JSON.
+    return jsonify(me)   #when a view function returns a dict. Flask automatically converts it to JSON.
